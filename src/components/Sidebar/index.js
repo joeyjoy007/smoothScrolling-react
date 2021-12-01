@@ -1,27 +1,27 @@
 import React from 'react'
-import { SidebarContainer,Icon } from './SidebarElement';
+import { SidebarContainer,Icon,SidebarWrapper,SidebarLink,SideBtnwrap,SidebarRoute,SidebarMenu} from './SidebarElement';
 import {GrClose} from 'react-icons/gr'
 
-const Sidebar = () => {
+const Sidebar = ({isopen,toggle}) => {
     return (
-        <SidebarContainer>
+        <SidebarContainer isopen={isopen} onClick = {toggle}>
         <Icon >
         <GrClose/>
         
         </Icon>
         <SidebarWrapper>
         <SidebarMenu>
-        <SidebarLink to="/about">
+        <SidebarLink onClick = {toggle} to="/about">
         About
         </SidebarLink>
-        <SidebarLink to="/about">
-        About
+        <SidebarLink onClick = {toggle} to="/discover">
+        Discover
         </SidebarLink>
-        <SidebarLink to="/about">
-        About
+        <SidebarLink onClick = {toggle} to="/services">
+        Services
         </SidebarLink>
-        <SidebarLink to="/about">
-        About
+        <SidebarLink onClick = {toggle} to="/signup">
+        Sign Up
         </SidebarLink>
         
         </SidebarMenu>
